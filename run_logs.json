@@ -1,0 +1,226 @@
+[
+  {
+    "level": "easy",
+    "question": "If a train leaves at 14:30 and arrives at 18:05, how long is the journey?",
+    "output": {
+      "answer": "3 hours and 35 minutes",
+      "status": "success",
+      "reasoning_visible_to_user": "The train journey takes 3 hours and 35 minutes, calculated by finding the difference between 14:30 and 18:05.",
+      "metadata": {
+        "plan": "Identify the departure time and arrival time | Convert both times to total minutes since midnight | Subtract departure time from arrival time to get duration in minutes | Convert the duration back into hours and minutes | Format the final answer",
+        "checks": [
+          {
+            "check_name": "independent_resolve",
+            "passed": true,
+            "details": "Verifier answer: 3 hours and 35 minutes. 18:05 minus 14:30 is 3 hours and 35 minutes, which matches the proposed answer."
+          },
+          {
+            "check_name": "constraint_check",
+            "passed": true,
+            "details": "18:05 minus 14:30 is 3 hours and 35 minutes, which matches the proposed answer."
+          }
+        ],
+        "retries": 0
+      }
+    },
+    "verifier_passed": true,
+    "retried": false,
+    "matches_expected": true
+  },
+  {
+    "level": "easy",
+    "question": "Alice has 3 red apples and twice as many green apples as red. How many apples in total?",
+    "output": {
+      "answer": "9 apples",
+      "status": "success",
+      "reasoning_visible_to_user": "Alice has 3 red apples and 6 green apples, giving her 9 apples in total.",
+      "metadata": {
+        "plan": "Identify the number of red apples | Calculate the number of green apples by multiplying the number of red apples by 2 | Add the number of red and green apples to get the total | Format the final answer",
+        "checks": [
+          {
+            "check_name": "independent_resolve",
+            "passed": true,
+            "details": "Verifier answer: 9 apples. Red = 3, Green = 6, Total = 9 apples."
+          },
+          {
+            "check_name": "constraint_check",
+            "passed": true,
+            "details": "Red = 3, Green = 6, Total = 9 apples."
+          }
+        ],
+        "retries": 0
+      }
+    },
+    "verifier_passed": true,
+    "retried": false,
+    "matches_expected": true
+  },
+  {
+    "level": "easy",
+    "question": "A meeting needs 60 minutes. Free slots: 09:00-09:30, 09:45-10:30, 11:00-12:00. Which slots can fit the meeting?",
+    "output": {
+      "answer": "11:00-12:00",
+      "status": "success",
+      "reasoning_visible_to_user": "Only the time slot from 11:00 to 12:00 provides the full 60 minutes required for the meeting.",
+      "metadata": {
+        "plan": "Calculate the duration of each available time slot | Compare each duration to the required 60 minutes | Identify slots with a duration of at least 60 minutes | List the qualifying slots",
+        "checks": [
+          {
+            "check_name": "independent_resolve",
+            "passed": true,
+            "details": "Verifier answer: 11:00-12:00. The meeting requires 60 minutes. Slot 1 is 30 mins, Slot 2 is 45 mins, Slot 3 is 60 mins. Only 11:00-12:00 provides sufficient time."
+          },
+          {
+            "check_name": "constraint_check",
+            "passed": true,
+            "details": "The meeting requires 60 minutes. Slot 1 is 30 mins, Slot 2 is 45 mins, Slot 3 is 60 mins. Only 11:00-12:00 provides sufficient time."
+          }
+        ],
+        "retries": 0
+      }
+    },
+    "verifier_passed": true,
+    "retried": false,
+    "matches_expected": true
+  },
+  {
+    "level": "easy",
+    "question": "A pen costs 12 rupees. How much do 7 pens cost?",
+    "output": {
+      "answer": "84 rupees",
+      "status": "success",
+      "reasoning_visible_to_user": "Multiplying the cost of a single pen (12 rupees) by the number of pens (7) gives a total cost of 84 rupees.",
+      "metadata": {
+        "plan": "Identify cost per pen | Identify quantity of pens | Multiply cost per pen by quantity | Format answer",
+        "checks": [
+          {
+            "check_name": "independent_resolve",
+            "passed": true,
+            "details": "Verifier answer: 84 rupees. 12 * 7 = 84, calculation is correct."
+          },
+          {
+            "check_name": "constraint_check",
+            "passed": true,
+            "details": "12 * 7 = 84, calculation is correct."
+          }
+        ],
+        "retries": 0
+      }
+    },
+    "verifier_passed": true,
+    "retried": false,
+    "matches_expected": true
+  },
+  {
+    "level": "easy",
+    "question": "Ravi is 25. His sister is 7 years younger. What is the sum of their ages?",
+    "output": {
+      "answer": "43",
+      "status": "success",
+      "reasoning_visible_to_user": "Ravi is 25 and his sister is 18, making their combined age 43.",
+      "metadata": {
+        "plan": "Identify Ravi's age | Calculate sister's age by subtracting 7 from Ravi's age | Calculate the sum of Ravi's age and sister's age | Format answer",
+        "checks": [
+          {
+            "check_name": "independent_resolve",
+            "passed": true,
+            "details": "Verifier answer: 43. Ravi is 25, sister is 18 (25-7), sum is 43."
+          },
+          {
+            "check_name": "constraint_check",
+            "passed": true,
+            "details": "Ravi is 25, sister is 18 (25-7), sum is 43."
+          }
+        ],
+        "retries": 0
+      }
+    },
+    "verifier_passed": true,
+    "retried": false,
+    "matches_expected": true
+  },
+  {
+    "level": "tricky",
+    "question": "A train leaves at 23:45 and arrives at 02:10 the next day. How long is the journey?",
+    "output": {
+      "answer": "2 hours and 25 minutes",
+      "status": "success",
+      "reasoning_visible_to_user": "The train travels for 15 minutes to reach midnight, plus another 2 hours and 10 minutes, totaling 2 hours and 25 minutes.",
+      "metadata": {
+        "plan": "Convert departure time to minutes from start of day | Convert arrival time (next day) to minutes from start of day | Subtract departure from arrival | Convert result back into hours and minutes | Format answer",
+        "checks": [
+          {
+            "check_name": "independent_resolve",
+            "passed": true,
+            "details": "Verifier answer: 2 hours and 25 minutes. The journey is 15 minutes to midnight plus 2 hours and 10 minutes, totaling 2 hours 25 minutes. The steps provided correctly calculate this."
+          },
+          {
+            "check_name": "constraint_check",
+            "passed": true,
+            "details": "The journey is 15 minutes to midnight plus 2 hours and 10 minutes, totaling 2 hours 25 minutes. The steps provided correctly calculate this."
+          }
+        ],
+        "retries": 0
+      }
+    },
+    "verifier_passed": true,
+    "retried": false,
+    "matches_expected": true
+  },
+  {
+    "level": "tricky",
+    "question": "Alice has 3 red apples and twice as many green apples as red. She gives away 2 green apples. How many does she have now?",
+    "output": {
+      "answer": "7 apples",
+      "status": "success",
+      "reasoning_visible_to_user": "Alice started with 3 red and 6 green apples for a total of 9, and after giving away 2 green apples, she has 7 left.",
+      "metadata": {
+        "plan": "Calculate the number of green apples | Calculate the total number of apples before giving any away | Subtract the apples given away from the current total | Format the final answer",
+        "checks": [
+          {
+            "check_name": "independent_resolve",
+            "passed": true,
+            "details": "Verifier answer: 7 apples. The logic is correct: 3 red, 6 green (3*2), total 9, minus 2 gives 7."
+          },
+          {
+            "check_name": "constraint_check",
+            "passed": true,
+            "details": "The logic is correct: 3 red, 6 green (3*2), total 9, minus 2 gives 7."
+          }
+        ],
+        "retries": 0
+      }
+    },
+    "verifier_passed": true,
+    "retried": false,
+    "matches_expected": true
+  },
+  {
+    "level": "tricky",
+    "question": "A meeting needs 45 minutes. Free slots: 10:00-10:45, 11:00-11:40. Which slots can fit it?",
+    "output": {
+      "answer": "10:00-10:45",
+      "status": "success",
+      "reasoning_visible_to_user": "The first slot is exactly 45 minutes long, fitting the meeting perfectly, while the second slot is only 40 minutes and is too short.",
+      "metadata": {
+        "plan": "Calculate the duration of each slot | Compare each duration to the 45-minute requirement | Identify which slots meet or exceed the duration | Output the valid slots",
+        "checks": [
+          {
+            "check_name": "independent_resolve",
+            "passed": true,
+            "details": "Verifier answer: 10:00-10:45. The meeting requires 45 minutes. Slot 1 is 45 minutes (fits), slot 2 is 40 minutes (too short)."
+          },
+          {
+            "check_name": "constraint_check",
+            "passed": true,
+            "details": "The meeting requires 45 minutes. Slot 1 is 45 minutes (fits), slot 2 is 40 minutes (too short)."
+          }
+        ],
+        "retries": 0
+      }
+    },
+    "verifier_passed": true,
+    "retried": false,
+    "matches_expected": true
+  }
+]
